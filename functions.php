@@ -1,5 +1,5 @@
 <?php
-//Version: 2.4
+//Version: 2.6
 
 function myCustomTheme_stylesheets() {
     wp_enqueue_style( 'style', get_stylesheet_uri());
@@ -17,6 +17,8 @@ function register_my_menus() {
     array(
         'main-menu' => __( 'Main Menu' ),
         'mobile-menu' => __( 'Mobile Menu' ),
+        'main-menu-legal' => __( 'Main Menu Legal' ),
+        'mobile-menu-legal' => __( 'Mobile Menu Legal' ),
         'footer-menu' => __( 'Footer Menu' )
      )
    );

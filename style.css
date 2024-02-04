@@ -1,6 +1,6 @@
 /*
 Theme Name: SOS Theme
-Version: 2.4
+Version: 2.6
 */
 
 /*---------------------
@@ -70,7 +70,9 @@ LAYOUT: Misc
 --------**/
 
 
-
+.container.legal p {
+    margin-bottom: 1em;
+}
 
 
 /**--------

@@ -1,4 +1,46 @@
-    <footer class="main-footer">
+<!--Version: 2.6 -->
+<?php 
+/* Template Name: Legal Page */
+?>
+
+<!--Version: 2.6 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title><?php bloginfo('title'); ?></title>
+    <?php wp_head() ?>
+</head>
+
+<body <?php body_class(); ?>>
+
+    <div class="wrapper top-wrapper">
+
+        <nav class="burger-icon">
+            <i id="menu-toggle" class="fas fa-bars"></i>
+        </nav>
+
+        <nav class="nav-bar main-nav">
+            <?php wp_nav_menu( array( 'theme_location' => 'main-menu-legal' ) ); ?>
+        </nav>
+
+        <main>
+
+            <?php
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        the_content();
+    endwhile;
+endif;
+?>
+
+        </main>
+    </div>
+    <!--.top-wrapper-->
+
+ <footer class="main-footer">
         <div class="container">
             <nav class="nav-bar footer-nav">
                 <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
@@ -13,7 +55,7 @@
         </div>
     </footer>
     <nav  id="overlay-menu" class="nav-overlay mobile-nav">
-        <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu' ) ); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu-legal' ) ); ?>
     </nav>
     <?php wp_footer() ?>
     
@@ -41,3 +83,4 @@
     </body>
 
 </html>
+
