@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS :target</title>
+    <link rel="stylesheet" href="assets/fonts/inter/font-style.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @media only screen and (max-width: 600px) {
+
+            #main-nav {
+                display: none;
+            }
+
+            .burger-icon {
+                display: block;
+                font-size: var(--burger-icon-size);
+                background: var(--header-background);
+                text-align: right;
+                padding: 20px;
+                margin-bottom 8px;
+            }
+            
+            .burger-icon a {
+                color: var(--header-color);
+
+            }
+
+            nav.burger-icon {
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+            
+            nav.main-nav .burger-icon a {
+                                padding: 0 0.1em 0 0;
+            }
+
+            #main-nav:target {
+                display: block;
+            }
+
+
+            header {
+                padding-top: 100px;
+            }
+
+
+            /*Main Nav Design zu Overlay Menu */
+            nav.main-nav {
+                position: fixed;
+                top: 0;
+                min-height: 100vh;
+                background: rgba(255, 255, 255, 0.9);
+            }
+
+            nav.main-nav>ul {
+                display: block;
+            }
+
+            nav.main-nav>ul>li>ul {
+                display: none;
+            }
+
+            nav.main-nav ul a,
+            nav.main-nav ul a.first-item {
+                padding: 1em;
+            }
+
+            nav.main-nav ul a {
+                display: inline-block;
+                width: 100%;
+                font-size: 1.6em;
+                border-bottom: 1px solid var(--nav-background-trans);
+                color: var(--header-background);
+            }
+
+            nav.main-nav a:hover {
+                color: var(--header-color);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Die CSS Target Technik</h1>
+        <p>Einfache Lösung "CSS pur" ohne JavaScript und Hacks</p>
+
+
+
+    </header>
+
+    <nav id="burger-icon" class="burger-icon">
+    <a href="#main-nav"><span class="fas fa-bars"></span></a></nav>
+
+    <nav id="main-nav" class="main-nav">
+        <div class="burger-icon"><a href="#burger-icon"><span class="fas fa-times"></span></a></div>
+        <ul>
+            <li><a href="#" class="first-item">Home/Top</a></li>
+            <li><a href="#section-1">Kurzbeschreibung</a></li>
+            <li><a href="#section-2">Section 2</a>
+                <ul>
+                    <li><a href="#article-1">Article 1</a></li>
+                    <li><a href="#article-2">Article 2</a></li>
+                    <li><a href="#article-3">Article 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#section-3">Section 3</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="section-1" class="section-1">
+            <h2>Kurzbeschreibung</h2>
+            <p>
+                Die CSS-Target-Technik ermöglicht die Erstellung eines Overlay-Menüs für mobile Webseiten ohne JavaScript. Hierbei wird das :target Pseudo-Selektor verwendet, um den Zustand des Menüs basierend auf der URL-Ankerreferenz zu steuern. Durch Klicken auf einen Link mit der entsprechenden Ankerreferenz wird das Menü angezeigt oder ausgeblendet.
+            </p>
+        </section>
+        <section id="section-2" class="section-2">
+            <h2>Section 2</h2>
+            <article id="article-1">
+                <h3>Article 1</h3>
+            </article>
+            <article id="article-2">
+                <h3>Article 2</h3>
+            </article>
+            <article id="article-3">
+                <h3>Article 3</h3>
+            </article>
+        </section>
+        <section id="section-3" class="section-3">
+            <h2>Section 3</h2>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2023 Enno Hyttrek</p>
+    </footer>
+
+</body></html>

@@ -1,5 +1,5 @@
 <?php
-//Version: 2.3
+//Version: 2.4
 
 function myCustomTheme_stylesheets() {
     wp_enqueue_style( 'style', get_stylesheet_uri());

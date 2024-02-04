@@ -1,6 +1,6 @@
 /*
-Theme Name: SOS 2023
-Version: 2.3
+Theme Name: SOS Theme
+Version: 2.4
 */
 
 /*---------------------
@@ -40,10 +40,14 @@ article.past-event a:hover,
 }
 
 /**--------
-Reset: Hide Main Nav for Mobile
+Reset: Mobile Nav Behaviour
 --------**/
 
 nav.main-nav {
+    display: none;
+}
+
+nav#overlay-menu {
     display: none;
 }
 
@@ -225,6 +229,7 @@ nav.main-nav {
 nav.burger-icon {
     text-align: right;
     padding-right: 20px;
+    min-height: 69px;
 }
 
 nav a {
@@ -239,12 +244,20 @@ nav ul {
 }
 
 
+nav.mobile-nav {
+    position: fixed;
+    top:69px;
+    z-index: 1000;
+}
+
+
 nav.mobile-nav ul {
-    grid-gap: 1px;
+    grid-gap: 0px;
 }
 
 nav.mobile-nav li {
     width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 nav.mobile-nav a {
@@ -327,6 +340,11 @@ nav.mobile-nav a {
     background: var(--color-mid-dark-grey-trans);
 }
 
+nav.mobile-nav li {
+    border-top: 1px solid var(--color-light-grey);
+}
+
+nav.mobile-nav li,
 nav.burger-icon,
 nav.main-nav a,
 nav.mobile-nav a {
@@ -640,7 +658,7 @@ RESPONSIVE (MOBILE FIRST)
     --------**/
 
     nav.burger-icon,
-    nav.mobile-nav {
+    nav#overlay-menu {
         display: none;
     }
 

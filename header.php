@@ -1,4 +1,4 @@
-<!--Version: 2.3 -->
+<!--Version: 2.4 -->
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +14,7 @@
     <div class="wrapper top-wrapper">
         
         <nav class="burger-icon">
-        <i class="fas fa-bars"></i>
+        <i id="menu-toggle" class="fas fa-bars"></i>
         </nav>
 
         <nav class="nav-bar main-nav">
