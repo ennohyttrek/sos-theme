@@ -1,0 +1,686 @@
+/*
+Theme Name: SOS 2023
+Version: 2.1
+*/
+
+/*---------------------
+RESET
+---------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 100px;
+    margin: -200px 0 0;
+}
+
+img {
+    width: 100%;
+}
+
+
+article.past-event a,
+.event-meta a {
+    text-decoration: none;
+}
+
+article.past-event a:hover,
+.event-meta a:hover {
+    text-decoration: underline;
+}
+
+/**--------
+Reset: Hide Main Nav for Mobile
+--------**/
+
+nav.main-nav {
+    display: none;
+}
+
+
+/*---------------------
+LAYOUT
+---------------------*/
+
+/**--------
+LAYOUT: Variables
+--------**/
+
+:root {
+    --standard-margin: 20px;
+}
+
+
+/**--------
+LAYOUT: Misc
+--------**/
+
+
+
+
+
+/**--------
+    Layout: Sections
+    --------**/
+
+
+section {
+    min-height: 90vh;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+
+header,
+section.section-01 {
+    min-height: 100vh;
+}
+
+.container h2 {
+    padding-top: 25vh;
+}
+
+
+/**--------
+    Layout: Hero Sections
+    --------**/
+
+header.has-hero,
+section.has-hero {
+	-webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+section.has-hero {
+    min-height: 80vh;
+}
+
+section.has-hero .container h2 {
+    padding-top: 80vh;
+}
+
+/**--------
+    Layout: Stage
+    --------**/
+
+
+nav.main-nav > div,
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1em var(--standard-margin);
+}
+
+
+/**--------
+    Layout: Header Elements
+    --------**/
+
+header .container > div {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    margin-bottom: 8vw;
+    padding-top: 34vw;
+}
+
+header .teaser p {
+    display: inline-block;
+    padding: 0.1em 0.3em;
+    margin-bottom: 0.3em;
+}
+
+
+.header-icons {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 5%;
+}
+
+.header-icons div {
+    width: 25%;
+    margin: 0;
+}
+
+
+
+.icon-gefoerdert img {
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+}
+
+
+section h2 {
+    padding-top: 5vw;
+    margin-bottom: 1em;
+}
+
+.body-text p {
+    margin-bottom: 1em;
+}
+
+section h4 {
+    display: inline-block;
+    padding: 0.1em 4em 0.2em 0.3em;
+    border-radius: 0.3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
+.flex-box-3 {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 1em;
+}
+
+article.past-event {
+    min-width: 100%;
+    border: 1px solid #fff;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.container.artists {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 2em;
+    column-rule: solid;
+}
+
+.container.artists p {
+    width: 100%;
+    margin: 0;
+}
+
+
+
+
+/*---------------------
+NAVIGATION
+---------------------*/
+
+nav.burger-icon,
+nav.main-nav {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+nav.burger-icon {
+    text-align: right;
+    padding-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 1em;
+}
+
+
+nav.mobile-nav ul {
+    grid-gap: 1px;
+}
+
+nav.mobile-nav li {
+    width: 100%;
+}
+
+nav.mobile-nav a {
+    display: inline-block;
+    width: 100%;
+    padding: 0.3em var(--standard-margin);
+}
+
+
+
+/*---------------------
+COLOR & STYLE
+---------------------*/
+
+/**--------
+Color Vars
+--------**/
+
+:root {
+    --color-green: hsl(100, 55%, 34%);
+    --color-magenta: hsl(320, 68%, 34%);
+    --color-orange: hsl(13, 76%, 55%);
+    --color-blue: hsl(190, 76%, 42%);
+
+    /*grey scale*/
+    --color-light-grey: hsl(200, 13%, 89%);
+    --color-mid-dark-grey: hsl(200, 34%, 21%);
+
+
+    /*transparent*/
+    --color-mid-dark-grey-trans: hsla(200, 34%, 21%, 0.9);
+    --color-green-trans: hsla(100, 55%, 34%, 0.8);
+    --color-magenta-trans: hsla(320, 68%, 34%, 0.8);
+    --color-orange-trans: hsla(13, 76%, 55%, 0.8);
+    --color-blue-trans: hsla(190, 76%, 42, 0.8);
+
+}
+
+
+header,
+header a {
+    color: #fff;
+}
+
+
+h1 {
+    text-shadow: 0.05em 0.05em var(--color-magenta);
+}
+
+
+.icon-gefoerdert img {
+    background: var(--color-mid-dark-grey-trans);
+}
+
+
+header .teaser p {
+    border-radius: 0.3em;
+}
+
+header .teaser div:nth-child(1) p,
+header .teaser div:nth-child(2) p {
+    background: var(--color-green-trans);
+}
+
+header .teaser div:nth-child(3) p {
+    background: var(--color-magenta-trans);
+}
+
+header .teaser div:nth-child(4) p {
+    background: var(--color-orange-trans);
+}
+
+header .social a:hover {
+    color: var(--color-green);
+}
+
+nav.burger-icon,
+nav.main-nav,
+nav.mobile-nav a {
+    background: var(--color-mid-dark-grey-trans);
+}
+
+nav.burger-icon,
+nav.main-nav a,
+nav.mobile-nav a {
+    color: var(--color-light-grey);
+}
+
+nav.main-nav a:hover {
+    color: var(--color-orange);
+}
+
+section,
+section a {
+    color: #fff;
+}
+
+.section-01 {
+    background: var(--color-blue);
+}
+
+.section-02a,
+.section-02b {
+    background: var(--color-orange);
+}
+
+.section-02a h2 {
+    text-shadow: 0.05em 0.05em var(--color-orange);
+}
+
+.section-02b h4 {
+    background: var(--color-magenta);
+}
+
+.section-03a,
+.section-03b {
+    background: var(--color-magenta);
+}
+
+.section-03a h2 {
+    text-shadow: 0.05em 0.05em var(--color-magenta);
+}
+
+.section-03b h4 {
+    background: var(--color-orange);
+}
+
+.section-04 {
+    background: var(--color-green);
+}
+
+.section-05a,
+.section-05b {
+    background: var(--color-green);
+}
+
+.section-05a h2 {
+    text-shadow: 0.05em 0.05em var(--color-green);
+}
+
+.section-05b h4 {
+    background: var(--color-orange);
+}
+
+.section-06a,
+.section-06b {
+    background: var(--color-orange);
+}
+
+.section-06a h2 {
+    text-shadow: 0.05em 0.05em var(--color-orange);
+}
+
+.section-06b h4 {
+    background: var(--color-magenta);
+}
+
+.section-07a,
+.section-07b {
+    background: var(--color-magenta);
+}
+
+.section-07a h2 {
+    text-shadow: 0.05em 0.05em var(--color-magenta);
+}
+
+.section-07b h4 {
+    background: var(--color-orange);
+}
+
+
+/*---------------------
+TYPOGRAPHY
+---------------------*/
+
+/**--------
+Typography: Font Families
+--------**/
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+article.past-event p:nth-child(3),
+.section-01 .event-meta p:nth-child(2),
+h1,
+h2 {
+    font-family: "lobster";
+}
+
+h1,
+h2 {
+    line-height: 1;
+}
+
+
+/**--------
+Typography: Font Weights
+--------**/
+
+header .social,
+header .teaser,
+nav.main-nav a,
+section h4,
+.section-01 .event-meta p:nth-child(1) span,
+article.past-event p:nth-child(1) {
+    font-weight: 700;
+}
+
+/**--------
+Typography: Sizes
+--------**/
+
+nav.burger-icon {
+    font-size: 2em;
+}
+
+nav.mobile-nav a {
+    font-size: 1.5em;
+}
+
+.body-text p,
+.section-01 .event-meta p:nth-child(2),
+article.past-event {
+    /*    font-size: 1.5em;*/
+}
+
+article.past-event p:nth-child(3) {
+    font-size: 1.8em;
+}
+
+
+header .teaser,
+.section-01 .event-meta {
+    font-size: 5.5vw;
+}
+
+header .social {
+    font-size: 3em;
+}
+
+section h4 {
+    /*    font-size: 2em;*/
+}
+
+h2 {
+    font-size: 12vw;
+}
+
+h1 {
+    font-size: 14vw;
+}
+
+
+
+
+/**--------
+Typography: Misc
+--------**/
+
+article.past-event p:nth-child(1) {
+    text-transform: uppercase;
+}
+
+
+/*---------------------
+MISC COMPONENTS
+---------------------*/
+
+
+/**--------
+Misc Components: Video Embed
+--------**/
+
+.embed-container {
+    position: relative;
+    padding-bottom: 80%;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+
+
+/***
+https://www.advancedcustomfields.com/resources/oembed/
+***/
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*---------------------
+RESPONSIVE (MOBILE FIRST)
+---------------------*/
+
+
+@media only screen and (min-width: 600px) {
+
+
+	header.has-hero,
+	section.has-hero {
+    background-attachment: fixed;
+}
+
+
+
+
+    /**--------
+    Layout: Current Event Layout
+    --------**/
+
+    .section-01 article {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 4%;
+    }
+
+    .section-01 article div {
+        width: 48%;
+    }
+
+
+
+    /**--------
+    Layout: Past Event Layout
+    --------**/
+
+    article.past-event {
+        min-width: 30%;
+    }
+
+
+    /**--------
+    Layout: Artist List Layout
+    --------**/
+
+
+    .container.artists p {
+        width: auto;
+        margin: 0;
+    }
+
+
+
+    /**--------
+    Typography: Sizes
+    --------**/
+
+
+    .body-text p,
+    .section-01 .event-meta p:nth-child(2),
+    article.past-event,
+    article.past-event p:nth-child(3) {
+        font-size: 1.5em;
+    }
+
+    header .social,
+    header .teaser,
+    .section-01 .event-meta {
+        font-size: 1.8em;
+    }
+
+    section h4 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 6em;
+    }
+
+    h1 {
+        font-size: 7em;
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+
+    /**--------
+    Reset: Toggle Main Nav/Burger Icon Visibility
+    --------**/
+
+    nav.burger-icon,
+    nav.mobile-nav {
+        display: none;
+    }
+
+    nav.main-nav {
+        display: block;
+    }
+
+
+    /**--------
+    Typography: Sizes
+    --------**/
+
+    nav.main-nav a {
+        font-size: 1.7vw;
+    }
+
+}
+
+
+
+@media only screen and (min-width: 75rem) {
+
+
+    /**--------
+    Layout: Hero Sections
+    --------**/
+    section.has-hero {
+        min-height: 85vh;
+    }
+
+    section.has-hero .container h2 {
+        padding-top: 50vh;
+    }
+
+    /**--------
+    Typography: Sizes
+    --------**/
+
+    nav.main-nav a {
+        font-size: 1.3em;
+    }
+
+}
