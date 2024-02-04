@@ -6,7 +6,7 @@
 
             <div class="credentials">
                 <p>© 2024 John Jones</p>
-                <p>Version: 2.2</p>
+                <p>Version: 2.3</p>
                 <p>Design & Programming: Enno Hyttrek, <a href="https://ennohyttrek.de">ennohyttrek.de</a></p>
             </div>
 
